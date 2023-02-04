@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class EnemyAI : MonoBehaviour
 {
     public float speed;
     public float checkRadius;
@@ -14,7 +14,7 @@ public class NewBehaviourScript : MonoBehaviour
 
     private Transform target;
     private Rigidbody2D rb;
-    private Animator anim;
+    //private Animator anim;
     private Vector2 movement;
     public Vector3 dir;
 
@@ -25,13 +25,13 @@ public class NewBehaviourScript : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        anim = GetComponent<Animator>();
+        //anim = GetComponent<Animator>();
         target = GameObject.FindWithTag("Player").transform;
 
     }
     private void Update()
     {
-        anim.SetBool("isRunning", isInChaseRange);
+        //anim.SetBool("isRunning", isInChaseRange);
 
         isInChaseRange = Physics2D.OverlapCircle(transform.position, checkRadius, whatIsPlayer);
         isInAttackRange = Physics2D.OverlapCircle(transform.position, attackRaidus, whatIsPlayer);
@@ -42,8 +42,8 @@ public class NewBehaviourScript : MonoBehaviour
         movement = dir;
         if (shouldRoatate)
         {
-            anim.SetFloat("x", dir.x);
-            anim.SetFloat("y", dir.y);
+            //anim.SetFloat("x", dir.x);
+            //anim.SetFloat("y", dir.y);
         }
     }
     private void FixedUpdate()
