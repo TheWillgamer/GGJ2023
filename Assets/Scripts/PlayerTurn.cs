@@ -17,11 +17,11 @@ public class PlayerTurn : MonoBehaviour
         float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
 
         //Ta Daaa
-        transform.rotation = Quaternion.Euler(new Vector3(0f, angle, 0f));
+        transform.rotation = Quaternion.Euler(new Vector3(0f, angle + 90f, 0f));
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
     {
-        return Mathf.Atan2(a.y - b.y, a.x - b.x) * Mathf.Rad2Deg;
+        return Mathf.Atan2(a.y - b.y, b.x - a.x) * Mathf.Rad2Deg;
     }
 }
