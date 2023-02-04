@@ -134,8 +134,8 @@ GameObject:
   - component: {fileID: 435661733}
   - component: {fileID: 435661732}
   - component: {fileID: 435661731}
-  - component: {fileID: 435661734}
   - component: {fileID: 435661735}
+  - component: {fileID: 435661734}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Enemy
@@ -217,17 +217,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 435661729}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db6ba83fa72f2834db70f3864f2df542, type: 3}
+  m_Script: {fileID: 11500000, guid: 47e04593ac23c2d4cb4d0b531c30503e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 1
-  checkRadius: 5
-  attackRaidus: 2
-  shouldRoatate: 1
-  whatIsPlayer:
-    serializedVersion: 2
-    m_Bits: 0
-  dir: {x: 0, y: 0, z: 0}
+  health: 0
+  maxHealth: 3
+  moveSpeed: 5
 --- !u!50 &435661735
 Rigidbody2D:
   serializedVersion: 4
@@ -248,7 +243,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 4
+  m_Constraints: 0
 --- !u!1 &981272270
 GameObject:
   m_ObjectHideFlags: 0
