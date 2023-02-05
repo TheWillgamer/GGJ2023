@@ -91,3 +91,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   right: 0
   speed: 200
+  timeToDisappear: 0.2

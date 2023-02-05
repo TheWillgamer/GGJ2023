@@ -354,10 +354,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b089e010b8c2f994d8706d972dc362f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  leftNote: {fileID: 0}
+  rightNote: {fileID: 0}
+  hitLoc: {fileID: 1516023475}
   leftSpawner: {fileID: 1679722007}
   rightSpawner: {fileID: 1413794914}
   note: {fileID: 1947689517648576066, guid: 3372f7728e8738b4d97b50e8bfe926a8, type: 3}
   bpm: 130
+  spawnDelay: 0
 --- !u!1 &604714758
 GameObject:
   m_ObjectHideFlags: 0
