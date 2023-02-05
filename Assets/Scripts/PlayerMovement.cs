@@ -20,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
     public TMP_Text comboText;
 
     public Transform playerBullet;
+    public Transform playerBulletCrit;
     public Transform bulletSpawn;
 
     private float timer;
@@ -79,6 +80,11 @@ public class PlayerMovement : MonoBehaviour
                 }
                 Destroy(rm.leftNote.gameObject);
                 Destroy(rm.rightNote.gameObject);
+
+                dashDir = new Vector3(horMov, 0, verMov).normalized;
+                canMove = false;
+                Invoke("StopDash", dashLength);
+                timer = 0f;
             }
             else  // Miss
             {
@@ -88,11 +94,6 @@ public class PlayerMovement : MonoBehaviour
                 combo = 0;
                 UpdateCombo();
             }
-
-            dashDir = new Vector3(horMov, 0, verMov).normalized;
-            canMove = false;
-            Invoke("StopDash", dashLength);
-            timer = 0f;
         }
 
         if (Input.GetMouseButtonDown(0) && timer > cd)
@@ -105,12 +106,18 @@ public class PlayerMovement : MonoBehaviour
                     gm.meterGain(meterGainPerfect);
                     timingText.text = "Perfect";
                     p++;
+
+                    Instantiate(playerBulletCrit, bulletSpawn.position, bulletSpawn.rotation);
+                    timer = 0f;
                 }
                 else
                 {
                     gm.meterGain(meterGainGreat);
                     timingText.text = "Great";
                     g++;
+
+                    Instantiate(playerBullet, bulletSpawn.position, bulletSpawn.rotation);
+                    timer = 0f;
                 }
                 Destroy(rm.leftNote.gameObject);
                 Destroy(rm.rightNote.gameObject);
@@ -126,8 +133,7 @@ public class PlayerMovement : MonoBehaviour
                 UpdateCombo();
             }
 
-            Instantiate(playerBullet, bulletSpawn.position, bulletSpawn.rotation);
-            timer = 0f;
+            
         }
 
         // Move
