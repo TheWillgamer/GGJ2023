@@ -11,7 +11,7 @@ public class CameraMove : MonoBehaviour
     void Start()
     {
         player = GameObject.Find("Player").transform;
-        distanceFromPlayer = new Vector3(0f, 15f, -1f);
+        distanceFromPlayer = new Vector3(0f, 15f, -2f);
     }
 
     // Update is called once per frame
