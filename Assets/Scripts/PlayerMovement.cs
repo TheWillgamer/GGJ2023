@@ -28,6 +28,9 @@ public class PlayerMovement : MonoBehaviour
     private RhythmManager rm;
     private GameplayManager gm;
 
+    private int p = 0;
+    private int g = 0;
+
     void Start()
     {
         combo = 0;
@@ -64,7 +67,7 @@ public class PlayerMovement : MonoBehaviour
             if(rm.leftNote != null && rm.rightNote != null)
             {
                 gm.meterGain(meterGainGreat);
-                if (rm.rightNote.localPosition.x < 10f)
+                if (rm.rightNote.localPosition.x < 15f)
                 {
                     gm.meterGain(meterGainPerfect);
                     timingText.text = "Perfect";
@@ -97,18 +100,22 @@ public class PlayerMovement : MonoBehaviour
             if (rm.leftNote != null && rm.rightNote != null)
             {
                 gm.meterGain(meterGainGreat);
-                if (rm.rightNote.localPosition.x < 10f)
+                if (rm.rightNote.localPosition.x < 15f)
                 {
                     gm.meterGain(meterGainPerfect);
                     timingText.text = "Perfect";
+                    p++;
                 }
                 else
                 {
                     gm.meterGain(meterGainGreat);
                     timingText.text = "Great";
+                    g++;
                 }
                 Destroy(rm.leftNote.gameObject);
                 Destroy(rm.rightNote.gameObject);
+                Debug.Log("Perfect:" + p);
+                Debug.Log("Great:" + g);
             }
             else  // Miss
             {

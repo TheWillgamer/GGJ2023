@@ -18,12 +18,22 @@ public class GameplayManager : MonoBehaviour
 
     private int score;
 
+    private RhythmManager rm;
+
+    //Music player
+    public AudioClip[] clips;
+    public float[] delay;
+    public float[] bpm;
+    public float[] length;
+    public AudioSource aSource;
+
     // Start is called before the first frame update
     void Start()
     {
         score = 0;
         timer = 0f;
         timerActive = true;
+        rm = GameObject.FindWithTag("UI").GetComponent<RhythmManager>();
     }
 
     // Update is called once per frame
@@ -35,6 +45,8 @@ public class GameplayManager : MonoBehaviour
 
         meterLoss(meterLossRate * Time.deltaTime);
         UpdateMeter();
+
+        UpdateMusic();
     }
 
     void DisplayTime()
@@ -85,5 +97,23 @@ public class GameplayManager : MonoBehaviour
         {
             meter = 0f;
         }
+    }
+
+    void UpdateMusic()
+    {
+        if (Input.GetKey(KeyCode.J))
+        {
+            aSource.clip = clips[0];
+            rm.activated = true;
+            rm.spawnRate = 60f / bpm[0];
+            rm.timer = 0f - delay[0];
+            aSource.Play();
+            Invoke("DisableRM", length[0]);
+        }
+    }
+
+    void DisableRM()
+    {
+        rm.activated = false;
     }
 }

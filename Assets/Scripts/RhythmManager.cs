@@ -11,20 +11,19 @@ public class RhythmManager : MonoBehaviour
     public Transform leftSpawner;
     public Transform rightSpawner;
     public Transform note;
-    public float bpm;
-    public float spawnDelay;
-    private float spawnRate;
-    private float timer;
+    public float spawnRate;
+    public float timer;
+    public bool activated;           // needs to be true for notes to start spawning
 
     void Start()
     {
-        timer = 0f - spawnDelay;
-        spawnRate = 1f / (bpm / 60);
+        activated = false;
     }
 
     void Update()
     {
-        SpawnNotes();
+        if (activated)
+            SpawnNotes();
         UpdateClosestNodes();
     }
 

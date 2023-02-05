@@ -200,6 +200,11 @@ MonoBehaviour:
   dashSpeed: 25
   dashLength: 0.1
   cd: 0.3
+  meterGainPerfect: 8
+  meterGainGreat: 3
+  meterLossMiss: 30
+  timingText: {fileID: 0}
+  comboText: {fileID: 0}
   playerBullet: {fileID: 6265901296565241181, guid: 6b527b200b282bd468c9001f59d7e8cc,
     type: 3}
   bulletSpawn: {fileID: 347755746160817429}
