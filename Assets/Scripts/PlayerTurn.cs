@@ -7,17 +7,18 @@ public class PlayerTurn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        //Get the Screen positions of the object
-        Vector2 positionOnScreen = Camera.main.WorldToViewportPoint(transform.position);
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        int layerMask = 1 << 1;
+        RaycastHit hit;
 
-        //Get the Screen position of the mouse
-        Vector2 mouseOnScreen = (Vector2)Camera.main.ScreenToViewportPoint(Input.mousePosition);
+        Vector3 relLoc = new Vector3(0f, 0f, 0f);
+        if (Physics.Raycast(ray, out hit, 30, layerMask))
+        {
+            relLoc = hit.point - transform.position;
+        }
 
-        //Get the angle between the points
-        float angle = AngleBetweenTwoPoints(positionOnScreen, mouseOnScreen);
-
-        //Ta Daaa
-        transform.rotation = Quaternion.Euler(new Vector3(0f, angle + 90f, 0f));
+        relLoc.y = 0f;
+        transform.rotation = Quaternion.LookRotation(relLoc, Vector3.up);
     }
 
     float AngleBetweenTwoPoints(Vector3 a, Vector3 b)
