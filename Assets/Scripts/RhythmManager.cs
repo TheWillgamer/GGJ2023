@@ -53,11 +53,11 @@ public class RhythmManager : MonoBehaviour
             Transform hit = hitLoc.GetChild(i);
 
             // For closest left node
-            if(hit.localPosition.x < 0f && hit.localPosition.x > -40f)
+            if(hit.localPosition.x < 0f && hit.localPosition.x > -30f)
                 leftNote = hit;
 
             // For closest right node
-            else if (hit.localPosition.x > 0f && hit.localPosition.x < 50f)
+            else if (hit.localPosition.x > 0f && hit.localPosition.x < 30f)
                 rightNote = hit;
         }
     }

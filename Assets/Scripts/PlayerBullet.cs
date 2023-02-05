@@ -6,13 +6,17 @@ public class PlayerBullet : MonoBehaviour
 {
     public float speed;
     public float lifeSpan;
+    public int damage;
+    public int meterGainOnHit;
     private float deathTime;
     private bool active;
+    private GameplayManager gm;
 
     void Start()
     {
         active = true;
         deathTime = Time.time + lifeSpan;
+        gm = GameObject.FindWithTag("EventSystem").GetComponent<GameplayManager>();
     }
 
     // Update is called once per frame
@@ -40,6 +44,7 @@ public class PlayerBullet : MonoBehaviour
             if (hit.transform.gameObject.tag == "Enemy")
             {
                 //hit.transform.gameObject.GetComponent<EnemyHitDetection>().TakeDamage(damage);
+                gm.meterGain(meterGainOnHit);
                 Invoke("DestroyProjectile", 1.5f);
                 active = false;
             }
@@ -50,6 +55,6 @@ public class PlayerBullet : MonoBehaviour
 
     void DestroyProjectile()
     {
-        Destroy(transform.parent.gameObject);
+        Destroy(gameObject);
     }
 }
