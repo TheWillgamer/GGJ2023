@@ -137,7 +137,7 @@ GameObject:
   - component: {fileID: 113189365}
   m_Layer: 0
   m_Name: EventSystem
-  m_TagString: Untagged
+  m_TagString: EventSystem
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -158,11 +158,15 @@ MonoBehaviour:
   multiplierText: {fileID: 990004417}
   meterBar: {fileID: 990004416}
   meterLossRate: 20
-  clips: []
-  delay: []
-  bpm: []
-  length: []
-  aSource: {fileID: 0}
+  clips:
+  - {fileID: 8300000, guid: a01773f9aa325a144b7279ffaa8561bc, type: 3}
+  delay:
+  - 0
+  bpm:
+  - 132
+  length:
+  - 148
+  aSource: {fileID: 1356147974}
 --- !u!114 &113189366
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -225,6 +229,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 347755746677351864, guid: fd23d0dca9bfd0e43ad641e0a88913bf,
+        type: 3}
+      propertyPath: comboText
+      value: 
+      objectReference: {fileID: 1038379141}
+    - target: {fileID: 347755746677351864, guid: fd23d0dca9bfd0e43ad641e0a88913bf,
+        type: 3}
+      propertyPath: timingText
+      value: 
+      objectReference: {fileID: 2147176645}
     - target: {fileID: 347755746677351871, guid: fd23d0dca9bfd0e43ad641e0a88913bf,
         type: 3}
       propertyPath: m_RootOrder
@@ -2608,7 +2622,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh37156
+  m_Name: pb_Mesh38200
   serializedVersion: 10
   m_SubMeshes:
   - serializedVersion: 2
@@ -2941,6 +2955,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1038379141 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3500485577475589521, guid: 869c8a6df78d2d343afeb0c91c09a552,
+    type: 3}
+  m_PrefabInstance: {fileID: 990004415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1326311980
 Mesh:
   m_ObjectHideFlags: 0
@@ -3105,6 +3131,12 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!82 &1356147974 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 7714968676322203098, guid: fd23d0dca9bfd0e43ad641e0a88913bf,
+    type: 3}
+  m_PrefabInstance: {fileID: 226359280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1780272820
 GameObject:
   m_ObjectHideFlags: 0
@@ -4286,3 +4318,15 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+--- !u!114 &2147176645 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3500485577738976446, guid: 869c8a6df78d2d343afeb0c91c09a552,
+    type: 3}
+  m_PrefabInstance: {fileID: 990004415}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
