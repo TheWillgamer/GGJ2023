@@ -14,7 +14,7 @@ public class HighScoreTable : MonoBehaviour
 
     private void Awake()
     {
-        EntryContainer = transform.Find("asdfasdfsadfsa");
+        EntryContainer = transform.Find("HighScoreEntryContainer");
         EntryTemplate = EntryContainer.Find("HighScoreEntryTemplate");
        
         EntryTemplate.gameObject.SetActive(false);
@@ -28,7 +28,7 @@ public class HighScoreTable : MonoBehaviour
         Debug.Log(highscores);
         
         //Sort entry list by Score
-        /*
+        
         for (int i = 0; i < highscores.highscoreEntryList.Count; i++)
         {
             for (int j = i + 1; j < highscores.highscoreEntryList.Count; j++)
@@ -42,7 +42,7 @@ public class HighScoreTable : MonoBehaviour
                 }
             }
         }
-        */
+        
         highscoreEntryTransformList = new List<Transform>();
         foreach (HighScoreEntry highscoreEntry in highscores.highscoreEntryList)
         { 
