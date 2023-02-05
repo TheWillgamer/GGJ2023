@@ -22,14 +22,9 @@ public class RhythmManager : MonoBehaviour
         spawnRate = 1f / (bpm / 60);
     }
 
-    // Update is called once per frame
-    void FixedUpdate()
-    {
-        SpawnNotes();
-    }
-
     void Update()
     {
+        SpawnNotes();
         UpdateClosestNodes();
     }
 
@@ -52,16 +47,18 @@ public class RhythmManager : MonoBehaviour
 
     void UpdateClosestNodes()
     {
+        leftNote = null;
+        rightNote = null;
         for(int i = 0; i < hitLoc.childCount; i++)
         {
             Transform hit = hitLoc.GetChild(i);
 
             // For closest left node
-            if(hit.localPosition.x < 0f && hit.localPosition.x > -150f && (leftNote == null || leftNote.localPosition.x < hit.localPosition.x))
+            if(hit.localPosition.x < 0f && hit.localPosition.x > -40f)
                 leftNote = hit;
 
             // For closest right node
-            else if (hit.localPosition.x > 0f && hit.localPosition.x < 150f && (rightNote == null || rightNote.localPosition.x > hit.localPosition.x))
+            else if (hit.localPosition.x > 0f && hit.localPosition.x < 50f)
                 rightNote = hit;
         }
     }
