@@ -85,6 +85,9 @@ public class PlayerMovement : MonoBehaviour
                 canMove = false;
                 Invoke("StopDash", dashLength);
                 timer = 0f;
+
+                combo++;
+                UpdateCombo();
             }
             else  // Miss
             {
@@ -101,7 +104,7 @@ public class PlayerMovement : MonoBehaviour
             if (rm.leftNote != null && rm.rightNote != null)
             {
                 gm.meterGain(meterGainGreat);
-                if (rm.rightNote.localPosition.x < 15f)
+                if (rm.rightNote.localPosition.x < 12f)
                 {
                     gm.meterGain(meterGainPerfect);
                     timingText.text = "Perfect";
@@ -121,8 +124,9 @@ public class PlayerMovement : MonoBehaviour
                 }
                 Destroy(rm.leftNote.gameObject);
                 Destroy(rm.rightNote.gameObject);
-                Debug.Log("Perfect:" + p);
-                Debug.Log("Great:" + g);
+
+                combo++;
+                UpdateCombo();
             }
             else  // Miss
             {

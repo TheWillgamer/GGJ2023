@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 150
   lifeSpan: 5
+  damage: 0
+  meterGainOnHit: 2
 --- !u!199 &2937937003496245917
 ParticleSystemRenderer:
   serializedVersion: 6
