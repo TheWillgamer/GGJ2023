@@ -4862,7 +4862,8 @@ MonoBehaviour:
   speed: 150
   lifeSpan: 5
   damage: 3
-  meterGainOnHit: 6
+  scorePerHit: 50
+  meterGainOnHit: 9
 --- !u!199 &5831535277418553582
 ParticleSystemRenderer:
   serializedVersion: 6

@@ -7,6 +7,7 @@ using TMPro;
 public class GameplayManager : MonoBehaviour
 {
     public TMP_Text timerText;
+    public TMP_Text scoreText;
     public TMP_Text multiplierText;
     public Image meterBar;
     private float timer;
@@ -115,5 +116,26 @@ public class GameplayManager : MonoBehaviour
     void DisableRM()
     {
         rm.activated = false;
+    }
+
+    public void addScore(int amt)
+    {
+        if (meter < 100)
+        {
+            score += amt;
+        }
+        else if (meter < 200)
+        {
+            score += amt * 2;
+        }
+        else if (meter < 300)
+        {
+            score += amt * 5;
+        }
+        else
+        {
+            score += amt * 10;
+        }
+        scoreText.text = score.ToString();
     }
 }

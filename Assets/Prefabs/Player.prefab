@@ -65,11 +65,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 10
-  dashSpeed: 25
+  dashSpeed: 35
   dashLength: 0.1
   cd: 0.3
-  meterGainPerfect: 6
-  meterGainGreat: 2
+  meterGainPerfect: 9
+  meterGainGreat: 3
   meterLossMiss: 75
   timingText: {fileID: 0}
   comboText: {fileID: 0}

@@ -7,6 +7,7 @@ public class PlayerBullet : MonoBehaviour
     public float speed;
     public float lifeSpan;
     public int damage;
+    public int scorePerHit;
     public int meterGainOnHit;
     private float deathTime;
     private bool active;
@@ -44,6 +45,7 @@ public class PlayerBullet : MonoBehaviour
             if (hit.transform.gameObject.tag == "Enemy")
             {
                 //hit.transform.gameObject.GetComponent<EnemyHitDetection>().TakeDamage(damage);
+                gm.addScore(scorePerHit);
                 gm.meterGain(meterGainOnHit);
                 Invoke("DestroyProjectile", 1.5f);
                 active = false;
