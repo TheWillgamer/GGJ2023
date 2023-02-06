@@ -32,7 +32,6 @@ public class EnemySpawner : MonoBehaviour
             if (spawnRate > 1)
             {
                 spawnRate -= .01f;
-                Debug.Log(spawnRate);
             }
         }
         timer += Time.deltaTime;
