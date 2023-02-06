@@ -7,6 +7,7 @@ public class MeleeEnemyAI : MonoBehaviour
     [SerializeField] private float moveSpeed;
     [SerializeField] private float turnSpeed;
     [SerializeField] private float attackRange;
+    public Transform Explosion;
 
     private Transform player;
 
@@ -34,6 +35,7 @@ public class MeleeEnemyAI : MonoBehaviour
 
     void OnDestroy()
     {
+        Instantiate(Explosion, transform.position, transform.rotation);
         
     }
 }

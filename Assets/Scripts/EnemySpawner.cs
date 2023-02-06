@@ -31,7 +31,7 @@ public class EnemySpawner : MonoBehaviour
             timer = 0;
             if (spawnRate > 1)
             {
-                spawnRate -= .01f;
+                spawnRate -= .03f;
             }
         }
         timer += Time.deltaTime;

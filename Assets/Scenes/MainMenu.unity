@@ -1225,9 +1225,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "[LMB] to shoot \n\n[Spacebar] to Dash\n\nYou can't shoot off rhythm or
-    dash off rhythm.\n\nYour damage is higher on a perfect than on a great.\n\nThat's
-    all, have fun! ^U^"
+  m_text: "[LMB] to shoot \n\n[Spacebar] to Dash\n\n[R] To rotate and play new songs\n\nYou
+    can't shoot off rhythm or dash off rhythm.\n\nYour damage is higher on a perfect
+    than on a great.\n\nThat's all, have fun! ^U^"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2100000, guid: e73a58f6e2794ae7b1b7e50b7fb811b0, type: 2}
@@ -1785,7 +1785,7 @@ MonoBehaviour:
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
-        m_CallState: 0
+        m_CallState: 2
 --- !u!114 &2133348735
 MonoBehaviour:
   m_ObjectHideFlags: 0

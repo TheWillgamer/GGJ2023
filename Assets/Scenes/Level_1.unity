@@ -242,7 +242,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5dd77808fe57cb24894daa476724074e, type: 3}
   - {fileID: 8300000, guid: 35dd734fb1deef747813c3a326892a02, type: 3}
   - {fileID: 8300000, guid: 712cc7c4d2fbded4291de20cc6bb187c, type: 3}
-  - {fileID: 8300000, guid: 536bb1a84011ada409875b8795edbb6e, type: 3}
+  - {fileID: 8300000, guid: a5074c6a424504740960240e89fbdde9, type: 3}
   - {fileID: 8300000, guid: a01773f9aa325a144b7279ffaa8561bc, type: 3}
   delay:
   - 0.06
@@ -251,7 +251,7 @@ MonoBehaviour:
   - -0.03
   - 0.23
   - -0.03
-  - 0
+  - -0.03
   - -0.03
   bpm:
   - 160
@@ -260,7 +260,7 @@ MonoBehaviour:
   - 132
   - 144
   - 132
-  - 130
+  - 132
   - 132
   aSource: {fileID: 1356147974}
 --- !u!114 &113189366
