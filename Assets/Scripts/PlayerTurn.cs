@@ -12,7 +12,7 @@ public class PlayerTurn : MonoBehaviour
         RaycastHit hit;
 
         Vector3 relLoc = new Vector3(0f, 0f, 0f);
-        if (Physics.Raycast(ray, out hit, 30, layerMask))
+        if (Physics.Raycast(ray, out hit, 50, layerMask))
         {
             relLoc = hit.point - transform.position;
         }

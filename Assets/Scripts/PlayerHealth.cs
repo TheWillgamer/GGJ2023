@@ -5,35 +5,40 @@ using UnityEngine.UI;
 
 public class PlayerHealth : MonoBehaviour
 {
-    public GameObject[] hearts; //[0] [1] [2]
+    public GameObject[] hearts;
     private int life; //3
     private bool dead;
+    public float meterLossOnHit;
+    private GameplayManager gm;
 
     private void Start()
     {
         life = hearts.Length;
-    }
-    void Update()
-    {
-        if (dead == true)
-        {
-
-            Debug.Log("YOU ARE DEAD!");
-        }
-        // SET DEAD CODE
+        gm = GameObject.FindWithTag("EventSystem").GetComponent<GameplayManager>();
     }
 
     public void TakeDamage(int d)
     {
-
         if (life >= 1)
         {
-            life -= d; //1- 1 - 0
-            Destroy(hearts[life].gameObject); //[1]
-            if (life < 1)
-            {
-                dead = true;
-            }
+            gm.meterLoss(meterLossOnHit);
+            life -= d;
+            UpdateHearts();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+
+    void UpdateHearts()
+    {
+        for(int i = 0; i < hearts.Length; i++)
+        {
+            if (i < life)
+                hearts[i].SetActive(true);
+            else
+                hearts[i].SetActive(false);
         }
     }
 }

@@ -8,31 +8,34 @@ public class EnemySpawner : MonoBehaviour
 {
     //change based on what enemy we use place in prefab
     [SerializeField]
-    private GameObject CubePrefabs;
+    private GameObject enemy;
 
     public Transform[] spawnPoints;
     //spawn interval for enemy
-    [SerializeField]
-    private float CubeInterval = 3.5f;
+    public float spawnRate;
+
+    private float timer;
+
     void Start()
     {
-        StartCoroutine(spawnEnemy(CubeInterval, CubePrefabs));
+        timer = 0;
     }
 
     
     void Update()
     {
-        //int randSpawnPoint = Random.Range(0, spawnPoints.Length);
-    }
-
-    private IEnumerator spawnEnemy(float interval, GameObject enemy)
-    {
-        int randSpawnPoint = Random.Range(0, spawnPoints.Length);
-        yield return new WaitForSeconds(interval);
-        //creates game objec and chooses spawn range of enemys
-        GameObject newEnemy = Instantiate(enemy, spawnPoints[randSpawnPoint].position,Quaternion.identity);
-        Debug.Log(randSpawnPoint);
-        StartCoroutine(spawnEnemy(interval, enemy));
+        if (timer > spawnRate)
+        {
+            int randSpawnPoint = Random.Range(0, spawnPoints.Length);
+            Instantiate(enemy, spawnPoints[randSpawnPoint].position, Quaternion.identity);
+            timer = 0;
+            if (spawnRate > 1)
+            {
+                spawnRate -= .01f;
+                Debug.Log(spawnRate);
+            }
+        }
+        timer += Time.deltaTime;
     }
 
 }

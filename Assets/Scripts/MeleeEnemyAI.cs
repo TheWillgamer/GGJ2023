@@ -27,7 +27,13 @@ public class MeleeEnemyAI : MonoBehaviour
 
         if (relLoc.magnitude < 1.3f)
         {
+            player.GetComponent<PlayerHealth>().TakeDamage(1);
             Destroy(gameObject);
         }
+    }
+
+    void OnDestroy()
+    {
+        
     }
 }

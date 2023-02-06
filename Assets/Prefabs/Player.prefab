@@ -103,6 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   hearts: []
+  meterLossOnHit: 100
 --- !u!82 &7714968676322203098
 AudioSource:
   m_ObjectHideFlags: 0

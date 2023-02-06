@@ -44,7 +44,7 @@ public class PlayerBullet : MonoBehaviour
         {
             if (hit.transform.gameObject.tag == "Enemy")
             {
-                //hit.transform.gameObject.GetComponent<EnemyHitDetection>().TakeDamage(damage);
+                hit.transform.gameObject.GetComponent<EnemyHealth>().TakeDamage(damage);
                 gm.addScore(scorePerHit);
                 gm.meterGain(meterGainOnHit);
                 Invoke("DestroyProjectile", 1.5f);

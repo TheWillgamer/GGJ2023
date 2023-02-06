@@ -25,7 +25,6 @@ public class GameplayManager : MonoBehaviour
     public AudioClip[] clips;
     public float[] delay;
     public float[] bpm;
-    public float[] length;
     public AudioSource aSource;
 
     // Start is called before the first frame update
@@ -102,14 +101,14 @@ public class GameplayManager : MonoBehaviour
 
     void UpdateMusic()
     {
-        if (Input.GetKey(KeyCode.J))
+        if (Input.GetKey(KeyCode.R))
         {
-            aSource.clip = clips[0];
+            int song = Random.Range(0, 8);
+            aSource.clip = clips[song];
             rm.activated = true;
-            rm.spawnRate = 60f / bpm[0];
-            rm.timer = 0f - delay[0];
+            rm.spawnRate = 60f / bpm[song];
+            rm.timer = 0f - delay[song];
             aSource.Play();
-            Invoke("DisableRM", length[0]);
         }
     }
 

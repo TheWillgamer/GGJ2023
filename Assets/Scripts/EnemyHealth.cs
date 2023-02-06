@@ -4,15 +4,25 @@ using UnityEngine;
 
 public class EnemyHealth : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int health;
+    public int meterGainOnDeath;
+    public int pointGainOnDeath;
+
+    private GameplayManager gm;
+
     void Start()
     {
-        
+        gm = GameObject.FindWithTag("EventSystem").GetComponent<GameplayManager>();
     }
 
-    // Update is called once per frame
-    void Update()
+    public void TakeDamage(int amt)
     {
-        
+        health -= amt;
+        if (health < 1)
+        {
+            gm.meterGain(meterGainOnDeath);
+            gm.addScore(pointGainOnDeath);
+            Destroy(gameObject);
+        }
     }
 }
